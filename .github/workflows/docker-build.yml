@@ -28,12 +28,12 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD}} # Docker Hub password stored as a secret
 
      # Step to build the Docker Image
-     - name: Build Docker image
-       run: docker build -t my-site . # Build the Docker Image from the current directory
+      - name: Build Docker image
+        run: docker build -t my-site . # Build the Docker Image from the current directory
 
      # Step to tag the Docker image and push it to Docker Hub
-     - name: Push Docker image
-       run: |
+      - name: Push Docker image
+        run: |
          docker tag my-site:latest onize/my-site:latest
          docker push onize/my-site:latest
     
